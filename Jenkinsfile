@@ -5,6 +5,6 @@ node {
 
     stage "Build"
     sh "pwd"
-    sh 'echo $PATH'
+    sh '/usr/bin/env'
     sh "./build.sh"
 }
