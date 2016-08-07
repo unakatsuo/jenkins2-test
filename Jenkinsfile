@@ -3,7 +3,8 @@ node {
     sh "pwd"
     env.WORKSPACE = env.PWD
     checkout scm
-    git url: 'https://github.com/axsh/openvnet.git', branch: 'master'
+    sh "rm -rf ovn"
+    sh 'git --depth=1 https://github.com/axsh/openvnet.git ovn'
     stage "Build"
     //sh "pwd"
     sh '/usr/bin/env'
