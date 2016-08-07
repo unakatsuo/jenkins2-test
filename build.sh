@@ -7,6 +7,6 @@ docker build -t "${img_tag}" .
 cid=$(docker run -d "${img_tag}")
 (rm -rf openvnet; git clone --depth=1 https://github.com/axsh/openvnet.git)
 (
-    docker cp openvnet ${cid}:openvnet
+    docker cp openvnet ${cid}:
 ) || :
-docker rm $cid
+docker rm -f $cid
