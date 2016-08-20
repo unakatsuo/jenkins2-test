@@ -6,5 +6,9 @@ node {
     stage "Build"
     //sh "pwd"
     sh '/usr/bin/env'
-    sh "./build.sh"
+    step([
+        $class: 'ExecuteDslScripts',
+        scriptText: 'job("example-2")'
+    ])
+    //sh "./build.sh"
 }
