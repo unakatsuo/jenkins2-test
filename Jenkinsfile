@@ -8,7 +8,7 @@ node {
     sh '/usr/bin/env'
     step([
         $class: 'ExecuteDslScripts',
-        scriptText: 'job("example-2")'
+        scriptText: ''
     ])
     //sh "./build.sh"
 }
