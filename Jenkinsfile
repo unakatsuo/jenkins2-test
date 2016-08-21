@@ -1,3 +1,5 @@
+import javaposse.jobdsl.plugin.RemovedJobAction;
+
 node {
     stage "Checkout"
     sh "pwd"
@@ -8,7 +10,8 @@ node {
     sh '/usr/bin/env'
     step([
         $class: 'ExecuteDslScripts',
-        scriptText: ''
+        scriptText: '',
+        removedJobAction: RemovedJobAction.DELETE
     ])
     //sh "./build.sh"
 }
